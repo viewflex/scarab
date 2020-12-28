@@ -3,7 +3,6 @@
 </template>
 
 <script>
-
 import Scarab from './components/Scarab.vue'
 
 export default {
@@ -11,7 +10,7 @@ export default {
   components: {
     Scarab
   }
-}
+};
 </script>
 
 <style>

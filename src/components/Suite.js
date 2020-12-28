@@ -28,6 +28,11 @@ export default class Suite {
         this.tally.push(num);
     }
 
+    insertToTally(num) {
+        this.tally.push(num);
+        this.tally.sort((a,b) => a-b);
+    }
+
     trimTally() {
         this.tally.shift();
 
@@ -100,6 +105,15 @@ export default class Suite {
                     }
             }
 
+            // If playing with La Partage rule, losing on zero we get half the bet back.
+            if (this.state.laPartageRule && num === 0) {
+                if (this.bet % 2 == 0) { // Even number
+                    this.insertToTally(this.bet/2); // Insert the half-bet.
+                } else { // Odd number
+                    this.tally[this.tally.length - 1]++; // Add 1 to last number in tally.
+                    this.insertToTally((this.bet - 1)/2); // Insert the evened half-bet.
+                }
+            }
 
         }
 
