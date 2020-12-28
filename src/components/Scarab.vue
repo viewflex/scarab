@@ -405,7 +405,7 @@
 
 <style>
     body {
-        margin: 40px;
+        margin: 1px;
     }
     .wrapper {
         display: grid;
