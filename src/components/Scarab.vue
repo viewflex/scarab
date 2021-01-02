@@ -134,8 +134,8 @@
                         stack: [1, 2, 2, 3, 3, 4],
                         minBet: 5,
                         maxBet: 5000,
-                        maxLoss: 20000,
-                        maxWin: 20000,
+                        maxLoss: 5000,
+                        maxWin: 5000,
                         harvestOnWinning: 5000
                     }
                 }
@@ -221,7 +221,7 @@
             function random(min, max) {
                 let pick = null;
                 pick = getRandomIntInclusive(min, max) + 1;
-                return pick < max ? pick : min;
+                return pick < max ? pick : min;                
             }
 
             function spin() {
